@@ -1,3 +1,3 @@
 module.exports = {
-  "src/**/*.{js,jsx,ts,tsx}": ["pnpm lint:fix", "git add"],
+  "src/**/*.{js,jsx,ts,tsx}": ["pnpm lint:fix"],
 };
