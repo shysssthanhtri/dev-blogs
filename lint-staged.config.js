@@ -1,3 +1,3 @@
 module.exports = {
-  "app/**/*.{js,jsx,ts,tsx}": ["pnpm lint:fix"],
+  "app/**/*.{js,jsx,ts,tsx}": ["pnpm lint"],
 };
