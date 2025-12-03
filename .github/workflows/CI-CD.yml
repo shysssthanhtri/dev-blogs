@@ -91,6 +91,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: vercel-output
+                  path: .vercel/output # <-- extract directly into the correct folder
 
             - name: Install Vercel CLI
               run: pnpm install vercel@canary
