@@ -21,6 +21,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+
             - name: Setup
               uses: ./.github/workflows/setup.yml
               with:
@@ -60,6 +63,9 @@ jobs:
         if: github.ref == 'refs/heads/main' && needs.build.result == 'success'
 
         steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+
             - name: Setup
               uses: ./.github/workflows/setup.yml
               with:
