@@ -65,8 +65,3 @@ jobs:
         with:
           name: vercel-output
           path: .vercel/output/** # required for deploy --prebuilt
-
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: vercel-output
