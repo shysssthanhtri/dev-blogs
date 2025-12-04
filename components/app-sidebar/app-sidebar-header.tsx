@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 import {
   SidebarHeader,
@@ -16,7 +16,15 @@ export const AppSidebarHeader = () => {
         <SidebarMenuItem>
           <SidebarMenuButton asChild>
             <Link href={ROUTES.HOME}>
-              <span className="text-base font-semibold">DEV BLOGS</span>
+              <Image
+                src="/images/dev-blogs-gpt.svg"
+                width={23}
+                height={23}
+                alt="DevFlow Logo"
+              />
+              <span className="text-base font-semibold">
+                DEV <span className="text-primary">BLOGS</span>
+              </span>
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>
