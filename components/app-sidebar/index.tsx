@@ -1,5 +1,6 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
+import { AppSidebarHeader } from "@/components/app-sidebar/app-sidebar-header";
 import {
   Sidebar,
   SidebarContent,
@@ -40,9 +41,11 @@ const items = [
   },
 ];
 
-export function AppSidebar() {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar>
+    <Sidebar collapsible="icon" {...props}>
+      <AppSidebarHeader />
+
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
