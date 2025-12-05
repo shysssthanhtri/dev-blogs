@@ -1,42 +1,33 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { IconSettings, IconUsers } from "@tabler/icons-react";
+import { Home, Inbox } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { ROUTES } from "@/constants/routes";
 
-// Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: ROUTES.HOME,
     icon: Home,
   },
   {
     title: "Inbox",
-    url: "#",
+    url: ROUTES.INBOX,
     icon: Inbox,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Follow",
+    url: ROUTES.FOLLOW,
+    icon: IconUsers,
   },
 ];
 
@@ -44,19 +35,33 @@ export const AppSidebarContent = () => {
   return (
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
             {items.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                  <a href={item.url}>
+                  <Link href={item.url}>
                     <item.icon />
                     <span>{item.title}</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             ))}
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+
+      <SidebarGroup className="mt-auto">
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href={ROUTES.SETTING}>
+                  <IconSettings />
+                  <span>Setting</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroupContent>
       </SidebarGroup>
