@@ -1,7 +1,8 @@
 import { cookies } from "next/headers";
 
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SiteHeader } from "@/components/site-header";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default async function Layout({
   children,
@@ -14,8 +15,8 @@ export default async function Layout({
   return (
     <SidebarProvider defaultOpen={isSidebarOpen}>
       <AppSidebar />
-      <main>
-        <SidebarTrigger />
+      <main className="w-full">
+        <SiteHeader />
         {children}
       </main>
     </SidebarProvider>
