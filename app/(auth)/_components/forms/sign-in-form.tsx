@@ -16,18 +16,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-const formSchema = z
-  .object({
-    email: z.email(),
-    password: z.string().min(5).max(20),
-    confirmPassword: z.string(),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"],
-    error: "Passwords do not match",
-  });
+const formSchema = z.object({
+  email: z.email(),
+  password: z.string().min(5).max(20),
+  confirmPassword: z.string(),
+});
 
-export const SignUpForm = () => {
+export const SignInForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -71,29 +66,10 @@ export const SignUpForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="confirmPassword"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="paragraph-medium">
-                    Confirm password
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Your password again"
-                      type="password"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
           </Field>
         </FieldGroup>
 
-        <Button className="w-full">Sign Up</Button>
+        <Button className="w-full">Sign In</Button>
       </form>
     </Form>
   );
