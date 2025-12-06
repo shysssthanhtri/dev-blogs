@@ -112,7 +112,6 @@
   --sidebar-ring: oklch(0.408 0.123 38.172);
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -133,4 +132,20 @@ div#__next {
 }
 main {
   @apply h-full;
+}
+
+@utility paragraph-regular {
+  @apply text-[16px] font-normal leading-[22.4px];
+}
+
+@utility paragraph-medium {
+  @apply text-[16px] font-medium leading-[22.4px];
+}
+
+@utility paragraph-semibold {
+  @apply text-[16px] font-semibold leading-[20.8px];
+}
+
+@utility no-focus {
+  @apply focus-visible:ring-0! focus-visible:ring-transparent! focus-visible:ring-offset-0!;
 }
