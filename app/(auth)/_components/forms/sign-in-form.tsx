@@ -19,7 +19,6 @@ import { Input } from "@/components/ui/input";
 const formSchema = z.object({
   email: z.email(),
   password: z.string().min(5).max(20),
-  confirmPassword: z.string(),
 });
 
 export const SignInForm = () => {
