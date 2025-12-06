@@ -4,7 +4,7 @@ import {
 } from "@tabler/icons-react";
 
 import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
+import { Field, FieldGroup } from "@/components/ui/field";
 
 const supportSocials = [
   {
@@ -19,15 +19,15 @@ const supportSocials = [
 
 export const SocialLoginGroup = () => {
   return (
-    <div className="space-y-4">
-      {supportSocials.map((social) => (
-        <Field key={social.name}>
-          <Button variant="outline" type="button">
+    <FieldGroup>
+      <Field>
+        {supportSocials.map((social) => (
+          <Button variant="outline" type="button" key={social.name}>
             <social.icon />
             Login with {social.name}
           </Button>
-        </Field>
-      ))}
-    </div>
+        ))}
+      </Field>
+    </FieldGroup>
   );
 };

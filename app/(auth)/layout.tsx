@@ -2,7 +2,7 @@ import React from "react";
 
 import { SocialLoginGroup } from "@/app/(auth)/_components/social-login-group";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FieldSeparator } from "@/components/ui/field";
+import { FieldGroup, FieldSeparator } from "@/components/ui/field";
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -17,10 +17,12 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="space-y-8">
-          <SocialLoginGroup />
-          <FieldSeparator>Or continue with</FieldSeparator>
-          {children}
+        <CardContent>
+          <FieldGroup>
+            <SocialLoginGroup />
+            <FieldSeparator>Or continue with</FieldSeparator>
+            {children}
+          </FieldGroup>
         </CardContent>
       </Card>
     </main>
