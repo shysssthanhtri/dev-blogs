@@ -7,10 +7,7 @@ import { mongoClient } from "@/lib/mongo";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: MongoDBAdapter(mongoClient),
-  providers: [
-    GitHub({ allowDangerousEmailAccountLinking: true }),
-    Google({ allowDangerousEmailAccountLinking: true }),
-  ],
+  providers: [GitHub, Google],
   session: {
     strategy: "jwt",
   },
