@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 
-import { AppSidebar } from "@/components/app-sidebar";
-import { SiteHeader } from "@/components/site-header";
+import { AppSidebar } from "@/app/(root)/_components/app-sidebar";
+import { SiteHeader } from "@/app/(root)/_components/site-header";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default async function Layout({

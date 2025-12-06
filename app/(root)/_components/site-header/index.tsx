@@ -1,8 +1,8 @@
 import React from "react";
 
-import { NotificationButton } from "@/components/site-header/notification-button";
-import { SiteHeaderSearch } from "@/components/site-header/site-header-search";
-import { ThemeButton } from "@/components/site-header/theme-button";
+import { NotificationButton } from "@/app/(root)/_components/site-header/notification-button";
+import { SiteHeaderSearch } from "@/app/(root)/_components/site-header/site-header-search";
+import { ThemeButton } from "@/app/(root)/_components/site-header/theme-button";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 

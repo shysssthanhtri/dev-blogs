@@ -2,7 +2,6 @@ import {
   IconBrandGithubFilled,
   IconBrandGoogleFilled,
 } from "@tabler/icons-react";
-import React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
