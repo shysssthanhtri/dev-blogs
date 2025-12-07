@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { ROUTES } from "@/constants/routes";
 
-const authRoutes = [ROUTES.SIGN_IN, ROUTES.SIGN_UP];
+const authRoutes = [ROUTES.SIGN_IN];
 
 export default auth(async (request) => {
   const path = request.nextUrl.pathname;
