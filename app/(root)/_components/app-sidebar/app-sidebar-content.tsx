@@ -39,7 +39,7 @@ export const AppSidebarContent = () => {
           <SidebarMenu>
             {items.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild tooltip={item.title}>
                   <Link href={item.url}>
                     <item.icon />
                     <span>{item.title}</span>
@@ -55,7 +55,7 @@ export const AppSidebarContent = () => {
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild tooltip="Setting">
                 <Link href={ROUTES.SETTING}>
                   <IconSettings />
                   <span>Setting</span>
