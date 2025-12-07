@@ -1,31 +1,30 @@
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { IconDotsVertical, IconLogout } from "@tabler/icons-react";
-import React from "react";
+"use client";
+
+import { IconDotsVertical } from "@tabler/icons-react";
+import Link from "next/link";
+import { User } from "next-auth";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { ROUTES } from "@/constants/routes";
 
-const user = {
-  name: "shadcn",
-  email: "m@example.com",
-  avatar: "/avatars/shadcn.jpg",
-};
+interface Props {
+  user: User;
+}
 
-export const SidebarUserButton = () => {
+export const SidebarUserButton = ({ user }: Props) => {
   const userInfo = (
     <>
       <Avatar className="h-8 w-8 rounded-lg">
-        <AvatarImage src={user.avatar} alt={user.name} />
-        <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+        <AvatarImage
+          src={user.image ?? ""}
+          alt={user.name ?? user.email ?? user.id ?? ""}
+        />
+        <AvatarFallback className="rounded-lg">N/A</AvatarFallback>
       </Avatar>
 
       <div className="grid flex-1">
@@ -36,30 +35,17 @@ export const SidebarUserButton = () => {
       </div>
     </>
   );
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <SidebarMenuButton size="lg">
-              {userInfo}
+        <Link href={ROUTES.SETTING}>
+          <SidebarMenuButton size="lg">
+            {userInfo}
 
-              <IconDotsVertical className="size-4" />
-            </SidebarMenuButton>
-          </DropdownMenuTrigger>
-
-          <DropdownMenuContent
-            side="right"
-            align="end"
-            sideOffset={4}
-            className="min-w-56"
-          >
-            <DropdownMenuItem>
-              <IconLogout />
-              Log out
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+            <IconDotsVertical className="size-4" />
+          </SidebarMenuButton>
+        </Link>
       </SidebarMenuItem>
     </SidebarMenu>
   );
